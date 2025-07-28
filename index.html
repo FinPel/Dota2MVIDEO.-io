@@ -19,6 +19,7 @@
     <a id="open-rules">Правила</a>
     <a id="open-sponsor">Спонсор</a>
     <a id="open-schedule">Расписание</a>
+    <a id="open-best-players">Лучшие игроки</a>
   </nav>
   <div class="bottom-bg">
     <div class="bottom-text">
@@ -29,7 +30,7 @@
     </div>
   </div>
   <div class="modal-overlay" id="modal-tournament" role="dialog" aria-modal="true" aria-labelledby="tournament-title" tabindex="-1">
-    <div class="modal" tabindex="0">
+    <div class="modal modal-tournament" tabindex="0">
       <button class="close-btn" aria-label="Закрыть">&times;</button>
       <h2 id="tournament-title">Турнирная таблица</h2>
       <div class="playoff" style="flex-direction: column; align-items: stretch;">
@@ -69,12 +70,12 @@
                 <span class="team-logo"><img src="Пиво.jpg" alt="BEER BROTHERHOOD"></span>
                 <span class="team-name">BEER BROTHERHOOD</span>
               </span>
-              <span class="team-points">6</span>
+              <span class="team-points">3</span>
             </div>
             <div class="team-row">
               <span class="team-place">2</span>
               <span class="team-info">
-                <span class="team-logo"><img src="макнагетс.jpg" alt="All for victory"></span>
+                <span class="team-logo"><img src="макнагетс.jpg" alt="макнагетс"></span>
                 <span class="team-name">макнагетс</span>
               </span>
               <span class="team-points">2</span>
@@ -92,31 +93,66 @@
         <div class="final-label">Плей-офф</div>
         <div class="playoff-bracket">
           <div class="round">
-            <div class="match">
-              <div class="team-match">
-                <img src="Эгоист.jpg" alt="Egoist" />
-                Egoist 
+            <div class="match match-with-score">
+              <div class="team-match-with-score">
+                <div class="team-match">
+                  <img src="Эгоист.jpg" alt="Egoist" />
+                  Egoist
+                </div>
+                <div class="team-score">2</div>
               </div>
-              <div class="team-match">
-                <img src="макнагетс.jpg" alt="макнагетс" />
-                макнагетс
+              <div class="team-match-with-score">
+                <div class="team-match">
+                  <img src="макнагетс.jpg" alt="макнагетс" />
+                  макнагетс
+                </div>
+                <div class="team-score">0</div>
               </div>
               <div class="match-time">25.07 в 23:00</div>
             </div>
-            <div class="match">
-              <div class="team-match">
-                <img src="Ананас.jpg" alt="SiberianАнанас" />
-                SiberianАнанас
+            <div class="match match-with-score">
+              <div class="team-match-with-score">
+                <div class="team-match">
+                  <img src="Ананас.jpg" alt="SiberianАнанас" />
+                  SiberianАнанас
+                </div>
+                <div class="team-score">0</div>
               </div>
-              <div class="team-match">
-                <img src="Пиво.jpg" alt="BEER BROTHERHOOD" />
-                BEER BROTHERHOOD
+              <div class="team-match-with-score">
+                <div class="team-match">
+                  <img src="Пиво.jpg" alt="BEER BROTHERHOOD" />
+                  BEER BROTHERHOOD
+                </div>
+                <div class="team-score">2</div>
               </div>
-              <div class="match-time"> 24.07 в 23:00</div>
+              <div class="match-time">24.07 в 23:00</div>
             </div>
           </div>
-          <div class="round">
-            <div class="match final-match">Финал</div>
+          <div class="round round-final">
+            <div class="match match-final match-with-score">
+              <div class="final-label">Финал</div>
+              <div class="team-match team-match-final">
+                  <img src="Эгоист.jpg" alt="Egoist" />
+                  Egoist
+                  <span class="vs-text">vs</span>
+                  <img src="Пиво.jpg" alt="BEER BROTHERHOOD" />
+                  BEER BROTHERHOOD
+              </div>
+              <div class="score-final-container">
+                <div class="team-score">1</div>
+                <div class="team-score">2</div>
+              </div>
+              <div class="match-time">26.07 в 23:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="winner-block">
+          <h3>🏆 Победитель турнира</h3>
+          <div class="winner-team">
+            <span class="team-logo winner-logo">
+              <img src="Пиво.jpg" alt="BEER BROTHERHOOD" />
+            </span>
+            BEER BROTHERHOOD
           </div>
         </div>
       </div>
@@ -175,8 +211,34 @@
         <ul class="schedule-list">
           <li><strong>24.07</strong> — SiberianАнанас VS BEER BROTHERHOOD в 23:00</li>
           <li><strong>25.07</strong> — Egoist VS макнагетс в 23:00</li>
-          <li><strong>26.07</strong> — Финал в 23:00</li>
+          <li><strong>26.07</strong> — Egoist VS BEER BROTHERHOOD в 23:00</li>
         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="modal-best-players" role="dialog" aria-modal="true" aria-labelledby="best-players-title" tabindex="-1">
+    <div class="modal modal-best-players" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="best-players-title">Лучшие игроки турнира</h2>
+      <div class="best-players-container">
+        <div class="best-player-column best-mid">
+          <h3>Лучший МИД-игрок турнира</h3>
+          <div class="player-name">bl1ndeffect</div>
+          <div class="player-name">Invoker</div>
+          <img src="https://i.pinimg.com/736x/fe/a6/6b/fea66b87a5254944203a95f191c66c80.jpg" alt="Invoker Dota 2" class="player-image" />
+        </div>
+        <div class="best-player-column best-mvp">
+          <h3>MVP турнира</h3>
+          <div class="player-name">Loran</div>
+          <div class="player-name">Lifestealer</div>
+          <img src="https://i.playground.ru/i/pix/1798640/image.jpg" alt="Lifestealer Dota 2" class="player-image" />
+        </div>
+        <div class="best-player-column best-support">
+          <h3>Лучший саппорт турнира</h3>
+          <div class="player-name">DarkHelen</div>
+          <div class="player-name">Warlock</div>
+          <img src="https://avatars.mds.yandex.net/i?id=4f3cf550a36ba55f91efb34af0c7e38a_l-12150810-images-thumbs&n=13" alt="Warlock Dota 2" class="player-image" />
+        </div>
       </div>
     </div>
   </div>
@@ -186,6 +248,7 @@
     const modalSponsor = document.getElementById('modal-sponsor');
     const modalRules = document.getElementById('modal-rules');
     const modalSchedule = document.getElementById('modal-schedule');
+    const modalBestPlayers = document.getElementById('modal-best-players');
 
     document.getElementById('open-tournament').addEventListener('click', () => {
       modalTournament.style.display = 'flex';
@@ -207,6 +270,11 @@
       document.body.style.overflow = 'hidden';
       modalSchedule.querySelector('.modal').focus();
     });
+    document.getElementById('open-best-players').addEventListener('click', () => {
+      modalBestPlayers.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalBestPlayers.querySelector('.modal').focus();
+    });
 
     const closeButtons = document.querySelectorAll('.close-btn');
     closeButtons.forEach(btn => {
@@ -217,7 +285,7 @@
       });
     });
 
-    [modalTournament, modalSponsor, modalRules, modalSchedule].forEach(modal => {
+    [modalTournament, modalSponsor, modalRules, modalSchedule, modalBestPlayers].forEach(modal => {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           modal.style.display = 'none';
@@ -228,7 +296,7 @@
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        [modalTournament, modalSponsor, modalRules, modalSchedule].forEach(modal => {
+        [modalTournament, modalSponsor, modalRules, modalSchedule, modalBestPlayers].forEach(modal => {
           if (modal.style.display === 'flex') {
             modal.style.display = 'none';
             document.body.style.overflow = '';
